@@ -17,7 +17,7 @@ namespace dotnet_todo_webapi.Controllers
 
         public TodoItemsController(TodoContext context)
         {
-            _context = context;
+            _context = context
         }
 
         // GET: api/TodoItems
@@ -32,7 +32,7 @@ namespace dotnet_todo_webapi.Controllers
         }
 
         // GET: api/TodoItems/5
-        [HttpGet("{id}")]
+        [HttpGet("{aid}")]
         public async Task<ActionResult<TodoItem>> GetTodoItem(long id)
         {
           if (_context.TodoItems == null)
@@ -87,7 +87,7 @@ namespace dotnet_todo_webapi.Controllers
         {
           if (_context.TodoItems == null)
           {
-              return Problem("Entity set 'TodoContext.TodoItems'  is null.");
+              return Problem("Entity set 'TodoContext.TodoItems' is null.");
           }
             _context.TodoItems.Add(todoItem);
             await _context.SaveChangesAsync();
