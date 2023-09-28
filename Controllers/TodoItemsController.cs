@@ -17,7 +17,7 @@ namespace dotnet_todo_webapi.Controllers
 
         public TodoItemsController(TodoContext context)
         {
-            _context = context;
+            _context = context
         }
 
         // GET: api/TodoItems
